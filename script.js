@@ -61,6 +61,7 @@ setupLightbox();
 setupProjectCarousel();
 setupHomeCarousel();
 setupKeyboardControls();
+setupSwipeControls();
 
 function renderProject(project) {
   if (!project) {
@@ -267,6 +268,79 @@ function setupKeyboardControls() {
       showSequenceItem(currentSequenceIndex - 1);
     }
   });
+}
+
+function setupSwipeControls() {
+  addSwipeControls(carouselAdvance, {
+    onSwipeLeft: () => showSequenceItem(currentSequenceIndex + 1),
+    onSwipeRight: () => showSequenceItem(currentSequenceIndex - 1),
+    shouldHandle: () => selectedWorksItems.length > 0,
+  });
+
+  addSwipeControls(lightboxFrame, {
+    onSwipeLeft: () => showLightboxImage(currentLightboxIndex + 1),
+    onSwipeRight: () => showLightboxImage(currentLightboxIndex - 1),
+    shouldHandle: () => Boolean(lightbox?.open && thumbnailButtons.length > 0),
+  });
+}
+
+function addSwipeControls(element, { onSwipeLeft, onSwipeRight, shouldHandle }) {
+  if (!element) {
+    return;
+  }
+
+  const minimumSwipeDistance = 48;
+  const verticalToleranceRatio = 1.2;
+  let startX = 0;
+  let startY = 0;
+  let tracking = false;
+
+  element.addEventListener(
+    "touchstart",
+    (event) => {
+      if (!shouldHandle()) {
+        return;
+      }
+
+      const touch = event.changedTouches[0];
+      startX = touch.clientX;
+      startY = touch.clientY;
+      tracking = true;
+    },
+    { passive: true }
+  );
+
+  element.addEventListener(
+    "touchend",
+    (event) => {
+      if (!tracking || !shouldHandle()) {
+        tracking = false;
+        return;
+      }
+
+      const touch = event.changedTouches[0];
+      const deltaX = touch.clientX - startX;
+      const deltaY = touch.clientY - startY;
+      const horizontalMovement = Math.abs(deltaX);
+      const verticalMovement = Math.abs(deltaY);
+      const isHorizontalSwipe =
+        horizontalMovement >= minimumSwipeDistance &&
+        horizontalMovement > verticalMovement * verticalToleranceRatio;
+
+      tracking = false;
+
+      if (!isHorizontalSwipe) {
+        return;
+      }
+
+      if (deltaX < 0) {
+        onSwipeLeft();
+      } else {
+        onSwipeRight();
+      }
+    },
+    { passive: true }
+  );
 }
 
 function showLightboxImage(index) {
