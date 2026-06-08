@@ -49,13 +49,17 @@ viewButtons.forEach((button) => {
 if (menuToggle) {
   menuToggle.addEventListener("click", () => {
     const projectHeader = document.querySelector(".project-header");
-    const isOpen = projectHeader.classList.toggle("is-open");
+    const isOpen = !projectHeader.classList.contains("is-open");
 
-    menuToggle.setAttribute("aria-expanded", String(isOpen));
-    menuToggle.classList.toggle("is-open", isOpen);
-    document.body.classList.toggle("menu-open", isOpen);
+    setMenuOpen(isOpen);
   });
 }
+
+document.querySelector(".project-header")?.addEventListener("click", (event) => {
+  if (event.target === event.currentTarget) {
+    setMenuOpen(false);
+  }
+});
 
 setupLightbox();
 setupProjectCarousel();
@@ -104,6 +108,15 @@ function renderProject(project) {
     thumbnailButtons = Array.from(thumbnailPanel.querySelectorAll("button"));
     preloadProjectThumbnails(project);
   }
+}
+
+function setMenuOpen(isOpen) {
+  const projectHeader = document.querySelector(".project-header");
+
+  projectHeader?.classList.toggle("is-open", isOpen);
+  menuToggle?.setAttribute("aria-expanded", String(isOpen));
+  menuToggle?.classList.toggle("is-open", isOpen);
+  document.body.classList.toggle("menu-open", isOpen);
 }
 
 function renderProjectNav() {

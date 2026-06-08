@@ -681,20 +681,41 @@ figcaption {
   }
 
   @media (orientation: landscape) {
-    .lightbox-close {
-      top: 8px;
-      right: 16px;
-    }
-
     .lightbox-image {
-      max-width: calc(100vw - 48px);
-      max-height: calc(100dvh - 48px);
+      max-width: calc(100vw - 32px);
+      max-height: calc(100dvh - 28px);
     }
 
     .lightbox-frame.is-landscape,
     .lightbox-frame.is-portrait {
       align-self: center;
       margin-top: 0;
+    }
+
+    .lightbox-count {
+      display: none;
+    }
+
+    .selected-works-page .carousel {
+      width: auto;
+      max-width: 100%;
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    .selected-works-page .carousel-advance {
+      width: auto;
+      max-width: 100%;
+    }
+
+    .selected-works-page .carousel-frame {
+      display: inline-block;
+    }
+
+    .selected-works-page .carousel-image {
+      width: auto;
+      max-width: 100%;
+      max-height: calc(100dvh - 96px);
     }
   }
 
