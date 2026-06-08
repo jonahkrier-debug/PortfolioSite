@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Selected Works — Jonah Krier</title>
+    <meta
+      name="description"
+      content="Selected photography works by Jonah Krier."
+    />
+    <meta property="og:title" content="Selected Works — Jonah Krier" />
+    <meta property="og:description" content="Selected photography works by Jonah Krier." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="Images/SelectedWorks/Main/SW_Main_01_DSC00030.avif" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <!--
+    `data-project` connects this page to the matching project in data/projects.js.
+    If this page is copied for a new project, change this value to the new project's slug.
+  -->
+  <body class="selected-works-page" data-project="selected-works">
+    <div class="page-shell">
+      <div class="mobile-header">
+        <a class="brand" href="index.html">JONAH KRIER</a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+      <aside class="sidebar" id="sidebar">
+        <nav class="view-controls" aria-label="Gallery views">
+          <button class="view-button is-active" type="button" data-view="sequence">Selected Works</button>
+          <!-- <button class="view-button" type="button" data-view="about">About</button> -->
+          <button class="view-button" type="button" data-view="thumbnails">Thumbnails</button>
+        </nav>
+      </aside>
+
+      <header class="project-header">
+        <nav class="site-nav" id="primary-nav" aria-label="Primary">
+          <div class="nav-dropdown">
+            <a class="is-active" href="selected-works.html">Projects</a>
+            <div class="dropdown-menu" aria-label="Projects submenu">
+              <a class="is-active" href="selected-works.html">Selected Works</a>
+            </div>
+          </div>
+          <a href="info.html">About / Contact</a>
+        </nav>
+      </header>
+
+      <main id="project">
+      <section class="panel sequence-panel is-active" data-panel="sequence" aria-label="Image sequence">
+        <figure class="carousel">
+          <button class="carousel-advance" type="button" aria-label="Show next photograph">
+            <span class="carousel-frame">
+              <img class="carousel-image is-active" src="Images/SelectedWorks/Main/SW_Main_01_DSC00030.avif" alt="Photograph 1" />
+            </span>
+          </button>
+          <figcaption class="carousel-count">1/20</figcaption>
+        </figure>
+      </section>
+
+      <section class="panel about-panel" data-panel="about" id="about">
+        <p>
+          Starting in 1995, Black began photographing his home region in earnest, seeking to capture
+          the marginalization and fortitude of communities throughout the Central Valley of
+          California.
+        </p>
+        <p>
+          Photo essays like “City of Exiles,” “From Dust to Dust,” “Dessicated Dreams,” “The Lost
+          Boys of California,” “The Dry Land,” “The Valley of Thirst,” “Droughtlandia,” and “I Don’t
+          Think You Should Go to Work Today” portray the hardships faced by many Valley residents as
+          they worked to live in one of the greatest agricultural regions of the world, responsible
+          for billions of dollars in output, but whose communities are marked by poverty,
+          unemployment, and lack of health and education.
+        </p>
+        <p>
+          Presented here is a selection from these pieces.
+        </p>
+      </section>
+
+      <!-- Thumbnails are generated from data/projects.js. -->
+      <section class="panel thumbnail-panel" data-panel="thumbnails" aria-label="Thumbnail grid"></section>
+      </main>
+    </div>
+
+    <dialog class="lightbox">
+      <button class="lightbox-focus-anchor" type="button" aria-hidden="true" tabindex="-1"></button>
+      <button class="lightbox-nav lightbox-prev" type="button" aria-label="Show previous image">‹</button>
+      <button class="lightbox-close" type="button" aria-label="Close image">×</button>
+      <span class="lightbox-frame">
+        <img class="lightbox-image is-active" alt="" draggable="false" />
+        <span class="lightbox-count">1/20</span>
+      </span>
+      <button class="lightbox-nav lightbox-next" type="button" aria-label="Show next image">›</button>
+    </dialog>
+
+    <script src="data/projects.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

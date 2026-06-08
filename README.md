@@ -1,0 +1,286 @@
+# Jonah Krier Portfolio
+
+Static photography portfolio built with plain HTML, CSS, and JavaScript.
+
+The site is intentionally lightweight: there is no framework, package manager, or build step.
+
+## Pages
+
+- `index.html` — homepage carousel
+- `selected-works.html` — selected works carousel, thumbnail grid, and lightbox
+- `info.html` — about/contact page
+
+## Important files
+
+- `data/projects.js` — main content/config file for homepage images and project images
+- `script.js` — renders carousels, thumbnails, lightbox, counters, and project dropdowns
+- `styles.css` — all layout and visual styling
+- `Images/` — all image assets
+
+Most future image/project edits should start in `data/projects.js`.
+
+## Local preview
+
+Open `index.html` in a browser.
+
+If browser caching makes image changes hard to see, refresh with cache disabled or use a private/incognito window.
+
+## Image structure
+
+```txt
+Images/
+  Home/
+    Index_01_....avif
+
+  Info/
+    Info_001_....avif
+
+  SelectedWorks/
+    Main/
+      SW_Main_01_....avif
+    Lightbox/
+      SW_Lightbox_01_....avif
+```
+
+### What each folder does
+
+- `Images/Home/` — homepage autoplay carousel
+- `Images/Info/` — about/contact page image
+- `Images/SelectedWorks/Main/` — selected works inline carousel and thumbnail grid
+- `Images/SelectedWorks/Lightbox/` — full lightbox images
+
+## The data file
+
+The central content file is:
+
+```txt
+data/projects.js
+```
+
+It defines:
+
+- homepage carousel images
+- project titles
+- project page URLs
+- project slugs
+- project image order
+- main image paths
+- lightbox image paths
+
+The site uses this file to generate:
+
+- the homepage carousel
+- project carousel images
+- thumbnail grid images
+- lightbox image paths
+- image counters
+- the Projects dropdown navigation
+
+## Replacing an existing image
+
+If the filename stays the same, no code changes are needed.
+
+For a Selected Works image:
+
+1. Replace the matching file in:
+
+```txt
+Images/SelectedWorks/Main/
+```
+
+2. Replace the matching file in:
+
+```txt
+Images/SelectedWorks/Lightbox/
+```
+
+Example:
+
+```txt
+Images/SelectedWorks/Main/SW_Main_15_DSC07873.avif
+Images/SelectedWorks/Lightbox/SW_Lightbox_15_DSC07873.avif
+```
+
+The `Main` version is used for the inline carousel and thumbnail grid.  
+The `Lightbox` version is used when a thumbnail is opened.
+
+## Adding a new image to an existing project
+
+1. Add the main/grid version to the project `Main/` folder.
+2. Add the lightbox version to the project `Lightbox/` folder.
+3. Open `data/projects.js`.
+4. Find the project’s `images: [...]` list.
+5. Copy an existing image object.
+6. Paste it where the new image should appear.
+7. Update:
+   - `main`
+   - `lightbox`
+   - `alt`
+
+Example image object:
+
+```js
+{
+  main: "Images/SelectedWorks/Main/SW_Main_21_FILENAME.avif",
+  lightbox: "Images/SelectedWorks/Lightbox/SW_Lightbox_21_FILENAME.avif",
+  alt: "Photograph 21"
+}
+```
+
+The image order in `data/projects.js` controls:
+
+- carousel order
+- thumbnail grid order
+- lightbox order
+- image counter order
+
+## Adding a new project page
+
+This is the current low-code workflow.
+
+### 1. Add image folders
+
+Create folders like:
+
+```txt
+Images/NewProject/Main/
+Images/NewProject/Lightbox/
+```
+
+Add the project images to those folders.
+
+### 2. Add project data
+
+Open:
+
+```txt
+data/projects.js
+```
+
+Copy the existing Selected Works project object:
+
+```js
+{
+  title: "Selected Works",
+  slug: "selected-works",
+  page: "selected-works.html",
+  images: [
+    ...
+  ],
+}
+```
+
+Paste it after the existing project object, then change:
+
+- `title` — the label shown in the Projects dropdown
+- `slug` — the project id used by the HTML page
+- `page` — the new HTML file
+- `images` — the new project image paths
+
+Example:
+
+```js
+{
+  title: "New Project",
+  slug: "new-project",
+  page: "new-project.html",
+  images: [
+    {
+      main: "Images/NewProject/Main/NP_Main_01_FILENAME.avif",
+      lightbox: "Images/NewProject/Lightbox/NP_Lightbox_01_FILENAME.avif",
+      alt: "Photograph 1"
+    }
+  ],
+}
+```
+
+### 3. Create the HTML page
+
+Copy:
+
+```txt
+selected-works.html
+```
+
+Rename the copy, for example:
+
+```txt
+new-project.html
+```
+
+In the copied file, update the body tag:
+
+```html
+<body class="selected-works-page" data-project="new-project">
+```
+
+The `data-project` value must match the `slug` in `data/projects.js`.
+
+### 4. Update the page title
+
+In the new HTML page, update:
+
+```html
+<title>New Project — Jonah Krier</title>
+```
+
+### 5. Check the navigation
+
+The Projects dropdown is generated from `data/projects.js`, so the new project should appear automatically.
+
+## Updating homepage images
+
+1. Add/replace files in:
+
+```txt
+Images/Home/
+```
+
+2. Open `data/projects.js`.
+3. Edit the `home.images` list.
+
+Example:
+
+```js
+{ src: "Images/Home/Index_01_FILENAME.avif", alt: "Photograph 1" }
+```
+
+## Updating the info page image
+
+The info page image is currently referenced directly in:
+
+```txt
+info.html
+```
+
+Look for:
+
+```html
+<img src="Images/Info/Info_001_DSC02620.avif" alt="Photograph by Jonah Krier" />
+```
+
+Replace the file path if needed.
+
+## Deployment to Vercel
+
+Import the GitHub repository into Vercel.
+
+Suggested settings:
+
+- Framework preset: `Other`
+- Build command: leave empty
+- Output directory: leave empty / project root
+- Install command: leave empty
+
+Vercel will serve `index.html` as the root page.
+
+## Pre-deploy checklist
+
+- Open `index.html` locally.
+- Check homepage carousel.
+- Check `selected-works.html`.
+- Check carousel next/previous click areas.
+- Check thumbnail grid.
+- Check lightbox on desktop and mobile.
+- Check `info.html`.
+- Confirm all new images are committed to GitHub.

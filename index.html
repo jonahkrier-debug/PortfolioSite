@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jonah Krier</title>
+    <meta
+      name="description"
+      content="Photography portfolio of Jonah Krier, featuring selected works and contact information."
+    />
+    <meta property="og:title" content="Jonah Krier" />
+    <meta
+      property="og:description"
+      content="Photography portfolio of Jonah Krier, featuring selected works and contact information."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="Images/Home/Index_01_DSC02069.avif" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="home-page">
+    <div class="page-shell">
+      <div class="mobile-header">
+        <a class="brand" href="index.html">JONAH KRIER</a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+      <aside class="sidebar" id="sidebar"></aside>
+
+      <header class="project-header">
+        <nav class="site-nav" id="primary-nav" aria-label="Primary">
+          <div class="nav-dropdown">
+            <a href="selected-works.html">Projects</a>
+            <div class="dropdown-menu" aria-label="Projects submenu">
+              <a href="selected-works.html">Selected Works</a>
+            </div>
+          </div>
+          <a href="info.html">About / Contact</a>
+        </nav>
+      </header>
+
+      <main class="home-carousel-wrap">
+        <figure class="carousel home-carousel" data-autoplay="true">
+          <span class="carousel-frame">
+            <img class="carousel-image is-active" src="Images/Home/Index_01_DSC02069.avif" alt="Photograph 1" />
+          </span>
+        </figure>
+      </main>
+    </div>
+
+    <script src="data/projects.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
