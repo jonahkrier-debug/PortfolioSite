@@ -31,6 +31,7 @@ let currentHomeIndex = 0;
 let isHomeAnimating = false;
 let currentLightboxIndex = 0;
 let isLightboxAnimating = false;
+let lockedScrollY = 0;
 const preloadedImages = new Set();
 
 renderProject(activeProject);
@@ -179,6 +180,7 @@ function setupLightbox() {
       revealLightboxFrameWhenReady(lightboxImage);
       updateLightboxOrientation(lightboxImage);
       isLightboxAnimating = false;
+      lockPageScroll();
       lightbox.showModal();
       document.body.classList.add("lightbox-open");
       lightboxFocusAnchor?.focus();
@@ -189,7 +191,19 @@ function setupLightbox() {
   lightboxClose?.addEventListener("click", () => lightbox.close());
   lightbox.addEventListener("close", () => {
     document.body.classList.remove("lightbox-open");
+    unlockPageScroll();
   });
+
+  lightbox.addEventListener(
+    "touchmove",
+    (event) => {
+      if (event.target === lightbox) {
+        event.preventDefault();
+      }
+    },
+    { passive: false }
+  );
+
   lightbox.addEventListener("click", (event) => {
     if (event.target !== lightbox) {
       return;
@@ -512,6 +526,36 @@ function preloadImage(src) {
   preloadedImages.add(src);
   const image = new Image();
   image.src = src;
+}
+
+function lockPageScroll() {
+  if (document.body.classList.contains("is-scroll-locked")) {
+    return;
+  }
+
+  lockedScrollY = window.scrollY || document.documentElement.scrollTop || 0;
+  document.documentElement.classList.add("is-scroll-locked");
+  document.body.classList.add("is-scroll-locked");
+  document.body.style.position = "fixed";
+  document.body.style.top = `-${lockedScrollY}px`;
+  document.body.style.left = "0";
+  document.body.style.right = "0";
+  document.body.style.width = "100%";
+}
+
+function unlockPageScroll() {
+  if (!document.body.classList.contains("is-scroll-locked")) {
+    return;
+  }
+
+  document.documentElement.classList.remove("is-scroll-locked");
+  document.body.classList.remove("is-scroll-locked");
+  document.body.style.position = "";
+  document.body.style.top = "";
+  document.body.style.left = "";
+  document.body.style.right = "";
+  document.body.style.width = "";
+  window.scrollTo(0, lockedScrollY);
 }
 
 function revealLightboxFrameWhenReady(image) {

@@ -33,6 +33,12 @@ body.lightbox-open {
   overflow: hidden;
 }
 
+html.is-scroll-locked,
+body.is-scroll-locked {
+  overflow: hidden;
+  overscroll-behavior: none;
+}
+
 .selected-works-page {
   overflow-x: hidden;
 }
@@ -397,6 +403,7 @@ figcaption {
 
 .lightbox {
   border: 0;
+  margin: 0;
   padding: 0;
   background: transparent;
   outline: none;
@@ -641,13 +648,22 @@ figcaption {
   }
 
   .lightbox {
+    position: fixed;
+    inset: 0;
     display: none;
     align-items: center;
     justify-content: center;
+    min-width: 100vw;
     width: 100vw;
+    max-width: none;
+    min-height: 100vh;
+    min-height: 100dvh;
+    height: 100vh;
     height: 100dvh;
-    max-width: 100vw;
+    max-height: none;
+    background: rgba(255, 255, 255, 0.88);
     overflow: hidden;
+    overscroll-behavior: contain;
   }
 
   .lightbox[open] {
