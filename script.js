@@ -44,6 +44,10 @@ viewButtons.forEach((button) => {
 
     viewButtons.forEach((item) => item.classList.toggle("is-active", item === button));
     panels.forEach((panel) => panel.classList.toggle("is-active", panel.dataset.panel === nextView));
+
+    if (nextView === "thumbnails") {
+      preloadProjectThumbnails(activeProject, { priority: "high", delayStep: 0 });
+    }
   });
 });
 
@@ -101,7 +105,7 @@ function renderProject(project) {
         <button type="button">
           <img src="${image.grid || image.main}" data-full="${image.lightbox}" alt="Open photograph ${
           index + 1
-        }" loading="eager" decoding="async" />
+        }" loading="eager" decoding="async" fetchpriority="${index < 6 ? "high" : "low"}" />
         </button>`
       )
       .join("");
@@ -504,27 +508,39 @@ function preloadAdjacentLightboxImages() {
   });
 }
 
-function preloadProjectThumbnails(project) {
-  const schedule =
-    window.requestIdleCallback ||
-    ((callback) => {
-      window.setTimeout(callback, 250);
-    });
+function preloadProjectThumbnails(project, options = {}) {
+  if (!project) {
+    return;
+  }
 
+  const { priority = "low", delayStep = 25 } = options;
+
+  // Warm the thumbnail grid before the user switches tabs.
+  // The first row is requested immediately so the grid has something ready
+  // even on slower mobile connections; the rest follow quickly without
+  // competing too hard with the active carousel/lightbox image.
   project.images.forEach((image, index) => {
-    schedule(() => {
-      window.setTimeout(() => preloadImage(image.grid || image.main), index * 80);
-    });
+    const isFirstScreenful = index < 6;
+    const imagePriority = priority === "high" || isFirstScreenful ? "high" : "low";
+    const delay = isFirstScreenful ? 0 : index * delayStep;
+
+    window.setTimeout(() => preloadImage(image.grid || image.main, imagePriority), delay);
   });
 }
 
-function preloadImage(src) {
+function preloadImage(src, priority = "auto") {
   if (!src || preloadedImages.has(src)) {
     return;
   }
 
   preloadedImages.add(src);
   const image = new Image();
+  image.decoding = "async";
+
+  if ("fetchPriority" in image) {
+    image.fetchPriority = priority;
+  }
+
   image.src = src;
 }
 
