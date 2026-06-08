@@ -94,12 +94,15 @@ function renderProject(project) {
       .map(
         (image, index) => `
         <button type="button">
-          <img src="${image.main}" data-full="${image.lightbox}" alt="Open photograph ${index + 1}" />
+          <img src="${image.grid || image.main}" data-full="${image.lightbox}" alt="Open photograph ${
+          index + 1
+        }" loading="eager" decoding="async" />
         </button>`
       )
       .join("");
 
     thumbnailButtons = Array.from(thumbnailPanel.querySelectorAll("button"));
+    preloadProjectThumbnails(project);
   }
 }
 
@@ -471,6 +474,20 @@ function preloadAdjacentLightboxImages() {
   [previousIndex, nextIndex].forEach((index) => {
     const image = thumbnailButtons[index].querySelector("img");
     preloadImage(getLightboxSource(image));
+  });
+}
+
+function preloadProjectThumbnails(project) {
+  const schedule =
+    window.requestIdleCallback ||
+    ((callback) => {
+      window.setTimeout(callback, 250);
+    });
+
+  project.images.forEach((image, index) => {
+    schedule(() => {
+      window.setTimeout(() => preloadImage(image.grid || image.main), index * 80);
+    });
   });
 }
 

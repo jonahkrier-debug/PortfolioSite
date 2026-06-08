@@ -127,6 +127,19 @@ Example image object:
 }
 ```
 
+Optional thumbnail-only grid image:
+
+```js
+{
+  main: "Images/SelectedWorks/Main/SW_Main_21_FILENAME.avif",
+  grid: "Images/SelectedWorks/Grid/SW_Grid_21_FILENAME.avif",
+  lightbox: "Images/SelectedWorks/Lightbox/SW_Lightbox_21_FILENAME.avif",
+  alt: "Photograph 21"
+}
+```
+
+If `grid` is present, the thumbnail grid uses it. If `grid` is omitted, the grid uses `main`.
+
 The image order in `data/projects.js` controls:
 
 - carousel order

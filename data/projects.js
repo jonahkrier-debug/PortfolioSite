@@ -78,6 +78,7 @@ window.PORTFOLIO_DATA = {
         Each image object needs:
         - main: image used for the inline carousel and thumbnail grid
         - lightbox: image used when the thumbnail opens in the lightbox
+        - grid: optional smaller thumbnail/grid image; if omitted, `main` is used
         - alt: accessibility text
 
         The image order here controls:
@@ -95,6 +96,12 @@ window.PORTFOLIO_DATA = {
         - add files to Main/ and Lightbox/
         - copy one image object below
         - update the paths and alt number/text
+
+        Optional performance improvement:
+        - If you export smaller thumbnail-only images later, add:
+            grid: "path/to/your-grid-image.avif"
+          The thumbnail view will use `grid`, while the carousel continues to use `main`
+          and the lightbox continues to use `lightbox`.
       */
       images: [
         { main: "Images/SelectedWorks/Main/SW_Main_01_DSC00030.avif", lightbox: "Images/SelectedWorks/Lightbox/SW_Lightbox_01_DSC00030.avif", alt: "Photograph 1" },
