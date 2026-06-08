@@ -627,7 +627,7 @@ figcaption {
 
   .thumbnail-panel.is-active {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 12px;
+    gap: 6px;
   }
 
   .lightbox-image {
@@ -664,6 +664,10 @@ figcaption {
     background: rgba(255, 255, 255, 0.88);
     overflow: hidden;
     overscroll-behavior: contain;
+  }
+
+  .lightbox::backdrop {
+    background: transparent;
   }
 
   .lightbox[open] {
@@ -710,28 +714,6 @@ figcaption {
 
     .lightbox-count {
       display: none;
-    }
-
-    .selected-works-page .carousel {
-      width: auto;
-      max-width: 100%;
-      margin-left: 0;
-      margin-right: 0;
-    }
-
-    .selected-works-page .carousel-advance {
-      width: auto;
-      max-width: 100%;
-    }
-
-    .selected-works-page .carousel-frame {
-      display: inline-block;
-    }
-
-    .selected-works-page .carousel-image {
-      width: auto;
-      max-width: 100%;
-      max-height: calc(100dvh - 96px);
     }
   }
 
