@@ -440,6 +440,10 @@ figcaption {
   text-align: left;
 }
 
+.lightbox-frame:not(.is-loaded) .lightbox-count {
+  visibility: hidden;
+}
+
 .lightbox-close {
   position: fixed;
   top: 18px;

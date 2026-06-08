@@ -31,6 +31,7 @@ let currentHomeIndex = 0;
 let isHomeAnimating = false;
 let currentLightboxIndex = 0;
 let isLightboxAnimating = false;
+const preloadedImages = new Set();
 
 renderProject(activeProject);
 renderHomeCarousel();
@@ -142,21 +143,29 @@ function setupLightbox() {
   }
 
   thumbnailButtons.forEach((button) => {
-    button.addEventListener("click", () => {
-      const image = button.querySelector("img");
+    const image = button.querySelector("img");
 
+    button.addEventListener("pointerenter", () => preloadImage(getLightboxSource(image)));
+    button.addEventListener("focus", () => preloadImage(getLightboxSource(image)));
+    button.addEventListener("touchstart", () => preloadImage(getLightboxSource(image)), { passive: true });
+
+    button.addEventListener("click", () => {
       currentLightboxIndex = thumbnailButtons.indexOf(button);
+      lightboxFrame.classList.remove("is-loaded");
       lightboxFrame.innerHTML = `<img class="lightbox-image is-active" draggable="false" src="${getLightboxSource(
         image
       )}" alt="${image.alt.replace("Open ", "")}" /><span class="lightbox-count">${currentLightboxIndex + 1}/${
         thumbnailButtons.length
       }</span>`;
       lightboxCount = lightboxFrame.querySelector(".lightbox-count");
-      updateLightboxOrientation(lightboxFrame.querySelector(".lightbox-image"));
+      const lightboxImage = lightboxFrame.querySelector(".lightbox-image");
+      revealLightboxFrameWhenReady(lightboxImage);
+      updateLightboxOrientation(lightboxImage);
       isLightboxAnimating = false;
       lightbox.showModal();
       document.body.classList.add("lightbox-open");
       lightboxFocusAnchor?.focus();
+      preloadAdjacentLightboxImages();
     });
   });
 
@@ -286,6 +295,9 @@ function showLightboxImage(index) {
         lightboxCount.textContent = `${currentLightboxIndex + 1}/${thumbnailButtons.length}`;
       }
 
+      lightboxFrame.classList.add("is-loaded");
+      preloadAdjacentLightboxImages();
+
       currentImage.classList.remove("is-transitioning");
 
       requestAnimationFrame(() => {
@@ -372,6 +384,43 @@ function transitionCarouselItem(frame, items, index, getState, setState) {
 
 function getLightboxSource(image) {
   return image.dataset.full || image.src;
+}
+
+function preloadAdjacentLightboxImages() {
+  if (thumbnailButtons.length === 0) {
+    return;
+  }
+
+  const previousIndex = (currentLightboxIndex - 1 + thumbnailButtons.length) % thumbnailButtons.length;
+  const nextIndex = (currentLightboxIndex + 1) % thumbnailButtons.length;
+
+  [previousIndex, nextIndex].forEach((index) => {
+    const image = thumbnailButtons[index].querySelector("img");
+    preloadImage(getLightboxSource(image));
+  });
+}
+
+function preloadImage(src) {
+  if (!src || preloadedImages.has(src)) {
+    return;
+  }
+
+  preloadedImages.add(src);
+  const image = new Image();
+  image.src = src;
+}
+
+function revealLightboxFrameWhenReady(image) {
+  const reveal = () => {
+    lightboxFrame.classList.add("is-loaded");
+  };
+
+  if (image.complete) {
+    reveal();
+    return;
+  }
+
+  image.addEventListener("load", reveal, { once: true });
 }
 
 function updateLightboxOrientation(image) {
