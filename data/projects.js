@@ -76,7 +76,7 @@ window.PORTFOLIO_DATA = {
         Selected Works images
         ---------------------
         Each image object needs:
-        - main: image used for the inline carousel and thumbnail grid
+        - main: image used for the inline carousel
         - lightbox: image used when the thumbnail opens in the lightbox
         - grid: optional smaller thumbnail/grid image; if omitted, `main` is used
         - alt: accessibility text
@@ -90,10 +90,11 @@ window.PORTFOLIO_DATA = {
         To replace an existing image:
         - overwrite the file at the matching `main` path
         - overwrite the file at the matching `lightbox` path
+        - overwrite the file at the matching `grid` path, if present
         - no code changes needed if the filenames stay the same
 
         To add a new image:
-        - add files to Main/ and Lightbox/
+        - add files to Carousel/, Grid/, and Lightbox/
         - copy one image object below
         - update the paths and alt number/text
 
@@ -104,26 +105,26 @@ window.PORTFOLIO_DATA = {
           and the lightbox continues to use `lightbox`.
       */
       images: [
-        { main: "Images/SelectedWorks/Main/SW_Main_01_DSC00030.avif", lightbox: "Images/SelectedWorks/Lightbox/SW_Lightbox_01_DSC00030.avif", alt: "Photograph 1" },
-        { main: "Images/SelectedWorks/Main/SW_Main_02_DSC08253.avif", lightbox: "Images/SelectedWorks/Lightbox/SW_Lightbox_02_DSC08253.avif", alt: "Photograph 2" },
-        { main: "Images/SelectedWorks/Main/SW_Main_03_DSC07582.avif", lightbox: "Images/SelectedWorks/Lightbox/SW_Lightbox_03_DSC07582.avif", alt: "Photograph 3" },
-        { main: "Images/SelectedWorks/Main/SW_Main_04_DSC08249.avif", lightbox: "Images/SelectedWorks/Lightbox/SW_Lightbox_04_DSC08249.avif", alt: "Photograph 4" },
-        { main: "Images/SelectedWorks/Main/SW_Main_05_DSC01651.avif", lightbox: "Images/SelectedWorks/Lightbox/SW_Lightbox_05_DSC01651.avif", alt: "Photograph 5" },
-        { main: "Images/SelectedWorks/Main/SW_Main_06_DSC09343.avif", lightbox: "Images/SelectedWorks/Lightbox/SW_Lightbox_06_DSC09343.avif", alt: "Photograph 6" },
-        { main: "Images/SelectedWorks/Main/SW_Main_07_DSC01953.avif", lightbox: "Images/SelectedWorks/Lightbox/SW_Lightbox_07_DSC01953.avif", alt: "Photograph 7" },
-        { main: "Images/SelectedWorks/Main/SW_Main_08_DSC07911.avif", lightbox: "Images/SelectedWorks/Lightbox/SW_Lightbox_08_DSC07911.avif", alt: "Photograph 8" },
-        { main: "Images/SelectedWorks/Main/SW_Main_09_DSC02398.avif", lightbox: "Images/SelectedWorks/Lightbox/SW_Lightbox_09_DSC02398.avif", alt: "Photograph 9" },
-        { main: "Images/SelectedWorks/Main/SW_Main_10_DSC02296.avif", lightbox: "Images/SelectedWorks/Lightbox/SW_Lightbox_10_DSC02296.avif", alt: "Photograph 10" },
-        { main: "Images/SelectedWorks/Main/SW_Main_11_DSC01306.avif", lightbox: "Images/SelectedWorks/Lightbox/SW_Lightbox_11_DSC01306.avif", alt: "Photograph 11" },
-        { main: "Images/SelectedWorks/Main/SW_Main_12_DSC09695.avif", lightbox: "Images/SelectedWorks/Lightbox/SW_Lightbox_12_DSC09695.avif", alt: "Photograph 12" },
-        { main: "Images/SelectedWorks/Main/SW_Main_13_DSC05299.avif", lightbox: "Images/SelectedWorks/Lightbox/SW_Lightbox_13_DSC05299.avif", alt: "Photograph 13" },
-        { main: "Images/SelectedWorks/Main/SW_Main_14_R0000778.avif", lightbox: "Images/SelectedWorks/Lightbox/SW_Lightbox_14_R0000778.avif", alt: "Photograph 14" },
-        { main: "Images/SelectedWorks/Main/SW_Main_15_DSC07873.avif", lightbox: "Images/SelectedWorks/Lightbox/SW_Lightbox_15_DSC07873.avif", alt: "Photograph 15" },
-        { main: "Images/SelectedWorks/Main/SW_Main_16_DSC01920.avif", lightbox: "Images/SelectedWorks/Lightbox/SW_Lightbox_16_DSC01920.avif", alt: "Photograph 16" },
-        { main: "Images/SelectedWorks/Main/SW_Main_17_DSC02775.avif", lightbox: "Images/SelectedWorks/Lightbox/SW_Lightbox_17_DSC02775.avif", alt: "Photograph 17" },
-        { main: "Images/SelectedWorks/Main/SW_Main_18_DSC09890.avif", lightbox: "Images/SelectedWorks/Lightbox/SW_Lightbox_18_DSC09890.avif", alt: "Photograph 18" },
-        { main: "Images/SelectedWorks/Main/SW_Main_19_JonahKrierPortfolio-3.avif", lightbox: "Images/SelectedWorks/Lightbox/SW_Lightbox_19_JonahKrierPortfolio-3.avif", alt: "Photograph 19" },
-        { main: "Images/SelectedWorks/Main/SW_Main_20_DSC01353.avif", lightbox: "Images/SelectedWorks/Lightbox/SW_Lightbox_20_DSC01353.avif", alt: "Photograph 20" },
+        { main: "Images/SelectedWorks/Carousel/SW_Carousel_01_DSC00030.avif", grid: "Images/SelectedWorks/Grid/SW_Grid_01_DSC00030.avif", lightbox: "Images/SelectedWorks/Lightbox/SW_Lightbox_01_DSC00030.avif", alt: "Photograph 1" },
+        { main: "Images/SelectedWorks/Carousel/SW_Carousel_02_DSC08253.avif", grid: "Images/SelectedWorks/Grid/SW_Grid_02_DSC08253.avif", lightbox: "Images/SelectedWorks/Lightbox/SW_Lightbox_02_DSC08253.avif", alt: "Photograph 2" },
+        { main: "Images/SelectedWorks/Carousel/SW_Carousel_03_DSC07582.avif", grid: "Images/SelectedWorks/Grid/SW_Grid_03_DSC07582.avif", lightbox: "Images/SelectedWorks/Lightbox/SW_Lightbox_03_DSC07582.avif", alt: "Photograph 3" },
+        { main: "Images/SelectedWorks/Carousel/SW_Carousel_04_DSC08249.avif", grid: "Images/SelectedWorks/Grid/SW_Grid_04_DSC08249.avif", lightbox: "Images/SelectedWorks/Lightbox/SW_Lightbox_04_DSC08249.avif", alt: "Photograph 4" },
+        { main: "Images/SelectedWorks/Carousel/SW_Carousel_05_DSC01651.avif", grid: "Images/SelectedWorks/Grid/SW_Grid_05_DSC01651.avif", lightbox: "Images/SelectedWorks/Lightbox/SW_Lightbox_05_DSC01651.avif", alt: "Photograph 5" },
+        { main: "Images/SelectedWorks/Carousel/SW_Carousel_06_DSC09343.avif", grid: "Images/SelectedWorks/Grid/SW_Grid_06_DSC09343.avif", lightbox: "Images/SelectedWorks/Lightbox/SW_Lightbox_06_DSC09343.avif", alt: "Photograph 6" },
+        { main: "Images/SelectedWorks/Carousel/SW_Carousel_07_DSC01953.avif", grid: "Images/SelectedWorks/Grid/SW_Grid_07_DSC01953.avif", lightbox: "Images/SelectedWorks/Lightbox/SW_Lightbox_07_DSC01953.avif", alt: "Photograph 7" },
+        { main: "Images/SelectedWorks/Carousel/SW_Carousel_08_DSC07911.avif", grid: "Images/SelectedWorks/Grid/SW_Grid_08_DSC07911.avif", lightbox: "Images/SelectedWorks/Lightbox/SW_Lightbox_08_DSC07911.avif", alt: "Photograph 8" },
+        { main: "Images/SelectedWorks/Carousel/SW_Carousel_09_DSC02398.avif", grid: "Images/SelectedWorks/Grid/SW_Grid_09_DSC02398.avif", lightbox: "Images/SelectedWorks/Lightbox/SW_Lightbox_09_DSC02398.avif", alt: "Photograph 9" },
+        { main: "Images/SelectedWorks/Carousel/SW_Carousel_10_DSC02296.avif", grid: "Images/SelectedWorks/Grid/SW_Grid_10_DSC02296.avif", lightbox: "Images/SelectedWorks/Lightbox/SW_Lightbox_10_DSC02296.avif", alt: "Photograph 10" },
+        { main: "Images/SelectedWorks/Carousel/SW_Carousel_11_DSC01306.avif", grid: "Images/SelectedWorks/Grid/SW_Grid_11_DSC01306.avif", lightbox: "Images/SelectedWorks/Lightbox/SW_Lightbox_11_DSC01306.avif", alt: "Photograph 11" },
+        { main: "Images/SelectedWorks/Carousel/SW_Carousel_12_DSC09695.avif", grid: "Images/SelectedWorks/Grid/SW_Grid_12_DSC09695.avif", lightbox: "Images/SelectedWorks/Lightbox/SW_Lightbox_12_DSC09695.avif", alt: "Photograph 12" },
+        { main: "Images/SelectedWorks/Carousel/SW_Carousel_13_DSC05299.avif", grid: "Images/SelectedWorks/Grid/SW_Grid_13_DSC05299.avif", lightbox: "Images/SelectedWorks/Lightbox/SW_Lightbox_13_DSC05299.avif", alt: "Photograph 13" },
+        { main: "Images/SelectedWorks/Carousel/SW_Carousel_14_R0000778.avif", grid: "Images/SelectedWorks/Grid/SW_Grid_14_R0000778.avif", lightbox: "Images/SelectedWorks/Lightbox/SW_Lightbox_14_R0000778.avif", alt: "Photograph 14" },
+        { main: "Images/SelectedWorks/Carousel/SW_Carousel_15_DSC07873.avif", grid: "Images/SelectedWorks/Grid/SW_Grid_15_DSC07873.avif", lightbox: "Images/SelectedWorks/Lightbox/SW_Lightbox_15_DSC07873.avif", alt: "Photograph 15" },
+        { main: "Images/SelectedWorks/Carousel/SW_Carousel_16_DSC01920.avif", grid: "Images/SelectedWorks/Grid/SW_Grid_16_DSC01920.avif", lightbox: "Images/SelectedWorks/Lightbox/SW_Lightbox_16_DSC01920.avif", alt: "Photograph 16" },
+        { main: "Images/SelectedWorks/Carousel/SW_Carousel_17_DSC02775.avif", grid: "Images/SelectedWorks/Grid/SW_Grid_17_DSC02775.avif", lightbox: "Images/SelectedWorks/Lightbox/SW_Lightbox_17_DSC02775.avif", alt: "Photograph 17" },
+        { main: "Images/SelectedWorks/Carousel/SW_Carousel_18_DSC09890.avif", grid: "Images/SelectedWorks/Grid/SW_Grid_18_DSC09890.avif", lightbox: "Images/SelectedWorks/Lightbox/SW_Lightbox_18_DSC09890.avif", alt: "Photograph 18" },
+        { main: "Images/SelectedWorks/Carousel/SW_Carousel_19_JonahKrierPortfolio-3.avif", grid: "Images/SelectedWorks/Grid/SW_Grid_19_JonahKrierPortfolio-3.avif", lightbox: "Images/SelectedWorks/Lightbox/SW_Lightbox_19_JonahKrierPortfolio-3.avif", alt: "Photograph 19" },
+        { main: "Images/SelectedWorks/Carousel/SW_Carousel_20_DSC01353.avif", grid: "Images/SelectedWorks/Grid/SW_Grid_20_DSC01353.avif", lightbox: "Images/SelectedWorks/Lightbox/SW_Lightbox_20_DSC01353.avif", alt: "Photograph 20" },
       ],
     },
   ],

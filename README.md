@@ -6,16 +6,16 @@ The site is intentionally lightweight: there is no framework, package manager, o
 
 ## Pages
 
-- `index.html` — homepage carousel
-- `selected-works.html` — selected works carousel, thumbnail grid, and lightbox
-- `info.html` — about/contact page
+- `index.html` - homepage carousel
+- `selected-works.html` - selected works carousel, thumbnail grid, and lightbox
+- `info.html` - about/contact page
 
 ## Important files
 
-- `data/projects.js` — main content/config file for homepage images and project images
-- `script.js` — renders carousels, thumbnails, lightbox, counters, and project dropdowns
-- `styles.css` — all layout and visual styling
-- `Images/` — all image assets
+- `data/projects.js` - main content/config file for homepage images and project images
+- `script.js` - renders carousels, thumbnails, lightbox, counters, and project dropdowns
+- `styles.css` - all layout and visual styling
+- `Images/` - all image assets
 
 Most future image/project edits should start in `data/projects.js`.
 
@@ -36,18 +36,21 @@ Images/
     Info_001_....avif
 
   SelectedWorks/
-    Main/
-      SW_Main_01_....avif
+    Carousel/
+      SW_Carousel_01_....avif
+    Grid/
+      SW_Grid_01_....avif
     Lightbox/
       SW_Lightbox_01_....avif
 ```
 
 ### What each folder does
 
-- `Images/Home/` — homepage autoplay carousel
-- `Images/Info/` — about/contact page image
-- `Images/SelectedWorks/Main/` — selected works inline carousel and thumbnail grid
-- `Images/SelectedWorks/Lightbox/` — full lightbox images
+- `Images/Home/` - homepage autoplay carousel
+- `Images/Info/` - about/contact page image
+- `Images/SelectedWorks/Carousel/` - selected works inline carousel images
+- `Images/SelectedWorks/Grid/` - smaller thumbnail grid images
+- `Images/SelectedWorks/Lightbox/` - full lightbox images
 
 ## The data file
 
@@ -64,7 +67,8 @@ It defines:
 - project page URLs
 - project slugs
 - project image order
-- main image paths
+- carousel image paths
+- grid image paths
 - lightbox image paths
 
 The site uses this file to generate:
@@ -80,40 +84,38 @@ The site uses this file to generate:
 
 If the filename stays the same, no code changes are needed.
 
-For a Selected Works image:
-
-1. Replace the matching file in:
+For a Selected Works image, replace the matching files in:
 
 ```txt
-Images/SelectedWorks/Main/
-```
-
-2. Replace the matching file in:
-
-```txt
+Images/SelectedWorks/Carousel/
+Images/SelectedWorks/Grid/
 Images/SelectedWorks/Lightbox/
 ```
 
 Example:
 
 ```txt
-Images/SelectedWorks/Main/SW_Main_15_DSC07873.avif
+Images/SelectedWorks/Carousel/SW_Carousel_15_DSC07873.avif
+Images/SelectedWorks/Grid/SW_Grid_15_DSC07873.avif
 Images/SelectedWorks/Lightbox/SW_Lightbox_15_DSC07873.avif
 ```
 
-The `Main` version is used for the inline carousel and thumbnail grid.  
+The `Carousel` version is used for the inline carousel.  
+The `Grid` version is used for the thumbnail grid.  
 The `Lightbox` version is used when a thumbnail is opened.
 
 ## Adding a new image to an existing project
 
-1. Add the main/grid version to the project `Main/` folder.
-2. Add the lightbox version to the project `Lightbox/` folder.
-3. Open `data/projects.js`.
-4. Find the project’s `images: [...]` list.
-5. Copy an existing image object.
-6. Paste it where the new image should appear.
-7. Update:
+1. Add the carousel version to the project `Carousel/` folder.
+2. Add the smaller thumbnail version to the project `Grid/` folder.
+3. Add the lightbox version to the project `Lightbox/` folder.
+4. Open `data/projects.js`.
+5. Find the project's `images: [...]` list.
+6. Copy an existing image object.
+7. Paste it where the new image should appear.
+8. Update:
    - `main`
+   - `grid`
    - `lightbox`
    - `alt`
 
@@ -121,24 +123,14 @@ Example image object:
 
 ```js
 {
-  main: "Images/SelectedWorks/Main/SW_Main_21_FILENAME.avif",
-  lightbox: "Images/SelectedWorks/Lightbox/SW_Lightbox_21_FILENAME.avif",
-  alt: "Photograph 21"
-}
-```
-
-Optional thumbnail-only grid image:
-
-```js
-{
-  main: "Images/SelectedWorks/Main/SW_Main_21_FILENAME.avif",
+  main: "Images/SelectedWorks/Carousel/SW_Carousel_21_FILENAME.avif",
   grid: "Images/SelectedWorks/Grid/SW_Grid_21_FILENAME.avif",
   lightbox: "Images/SelectedWorks/Lightbox/SW_Lightbox_21_FILENAME.avif",
   alt: "Photograph 21"
 }
 ```
 
-If `grid` is present, the thumbnail grid uses it. If `grid` is omitted, the grid uses `main`.
+If `grid` is present, the thumbnail grid uses it. If `grid` is omitted, the grid falls back to `main`.
 
 The image order in `data/projects.js` controls:
 
@@ -156,7 +148,8 @@ This is the current low-code workflow.
 Create folders like:
 
 ```txt
-Images/NewProject/Main/
+Images/NewProject/Carousel/
+Images/NewProject/Grid/
 Images/NewProject/Lightbox/
 ```
 
@@ -185,10 +178,10 @@ Copy the existing Selected Works project object:
 
 Paste it after the existing project object, then change:
 
-- `title` — the label shown in the Projects dropdown
-- `slug` — the project id used by the HTML page
-- `page` — the new HTML file
-- `images` — the new project image paths
+- `title` - the label shown in the Projects dropdown
+- `slug` - the project id used by the HTML page
+- `page` - the new HTML file
+- `images` - the new project image paths
 
 Example:
 
@@ -199,7 +192,8 @@ Example:
   page: "new-project.html",
   images: [
     {
-      main: "Images/NewProject/Main/NP_Main_01_FILENAME.avif",
+      main: "Images/NewProject/Carousel/NP_Carousel_01_FILENAME.avif",
+      grid: "Images/NewProject/Grid/NP_Grid_01_FILENAME.avif",
       lightbox: "Images/NewProject/Lightbox/NP_Lightbox_01_FILENAME.avif",
       alt: "Photograph 1"
     }
@@ -234,7 +228,7 @@ The `data-project` value must match the `slug` in `data/projects.js`.
 In the new HTML page, update:
 
 ```html
-<title>New Project — Jonah Krier</title>
+<title>New Project - Jonah Krier</title>
 ```
 
 ### 5. Check the navigation
