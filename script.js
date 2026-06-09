@@ -387,42 +387,56 @@ function showLightboxImage(index) {
   const image = thumbnailButtons[currentLightboxIndex].querySelector("img");
   const currentImage = lightboxFrame.querySelector(".lightbox-image");
   const preloadedImage = new Image();
+  let hasSwapped = false;
 
-  preloadedImage.src = getLightboxSource(image);
   preloadedImage.alt = image.alt.replace("Open ", "");
   preloadedImage.draggable = false;
 
+  const finishTransition = () => {
+    currentImage.classList.remove("is-transitioning");
+    isLightboxAnimating = false;
+  };
+
+  const swapImage = () => {
+    if (hasSwapped) {
+      return;
+    }
+
+    hasSwapped = true;
+    currentImage.src = preloadedImage.src;
+    currentImage.alt = preloadedImage.alt;
+    updateLightboxOrientation(currentImage);
+
+    if (lightboxCount) {
+      lightboxCount.textContent = `${currentLightboxIndex + 1}/${thumbnailButtons.length}`;
+    }
+
+    lightboxFrame.classList.add("is-loaded");
+    preloadAdjacentLightboxImages();
+
+    currentImage.classList.remove("is-transitioning");
+
+    requestAnimationFrame(() => {
+      currentImage.classList.add("is-transitioning");
+      currentImage.addEventListener("animationend", finishTransition, { once: true });
+      window.setTimeout(finishTransition, 260);
+    });
+  };
+
+  preloadedImage.addEventListener("load", swapImage, { once: true });
   preloadedImage.addEventListener(
-    "load",
+    "error",
     () => {
-      currentImage.src = preloadedImage.src;
-      currentImage.alt = preloadedImage.alt;
-      updateLightboxOrientation(currentImage);
-
-      if (lightboxCount) {
-        lightboxCount.textContent = `${currentLightboxIndex + 1}/${thumbnailButtons.length}`;
-      }
-
-      lightboxFrame.classList.add("is-loaded");
-      preloadAdjacentLightboxImages();
-
-      currentImage.classList.remove("is-transitioning");
-
-      requestAnimationFrame(() => {
-        currentImage.classList.add("is-transitioning");
-      });
-
-      currentImage.addEventListener(
-        "animationend",
-        () => {
-          currentImage.classList.remove("is-transitioning");
-          isLightboxAnimating = false;
-        },
-        { once: true }
-      );
+      isLightboxAnimating = false;
     },
     { once: true }
   );
+
+  preloadedImage.src = getLightboxSource(image);
+
+  if (preloadedImage.complete) {
+    swapImage();
+  }
 }
 
 function showSequenceItem(index) {

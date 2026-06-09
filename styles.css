@@ -409,6 +409,19 @@ figcaption {
   outline: none;
 }
 
+.lightbox[open] {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  max-width: none;
+  height: 100vh;
+  max-height: none;
+  overflow: hidden;
+}
+
 .lightbox-focus-anchor {
   position: fixed;
   width: 1px;
@@ -435,9 +448,21 @@ figcaption {
   outline: none;
 }
 
-  .lightbox-image.is-transitioning {
-    animation: lightbox-mobile-reveal 180ms ease-out forwards;
+.lightbox-image.is-transitioning {
+  animation: lightbox-reveal 180ms ease-out forwards;
+}
+
+@keyframes lightbox-reveal {
+  from {
+    opacity: 0.92;
+    filter: none;
   }
+
+  to {
+    opacity: 1;
+    filter: none;
+  }
+}
 
 .lightbox-count {
   display: block;
@@ -686,18 +711,6 @@ figcaption {
   .lightbox-frame.is-landscape {
     margin-top: 18px;
     align-self: center;
-  }
-
-  @keyframes lightbox-mobile-reveal {
-    from {
-      opacity: 0.92;
-      filter: none;
-    }
-
-    to {
-      opacity: 1;
-      filter: none;
-    }
   }
 
   @media (orientation: landscape) {
