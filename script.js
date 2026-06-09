@@ -91,6 +91,8 @@ function renderProject(project) {
     carouselCount.textContent = `1/${project.images.length}`;
   }
 
+  preloadAdjacentSequenceImages();
+
   if (lightboxCount) {
     lightboxCount.textContent = `1/${project.images.length}`;
   }
@@ -245,6 +247,8 @@ function setupProjectCarousel() {
   if (!carouselAdvance || selectedWorksItems.length === 0) {
     return;
   }
+
+  preloadSequenceImages();
 
   carouselAdvance.addEventListener("click", (event) => {
     const { left, width } = carouselAdvance.getBoundingClientRect();
@@ -452,6 +456,10 @@ function showSequenceItem(index) {
       if (carouselCount) {
         carouselCount.textContent = `${currentSequenceIndex + 1}/${selectedWorksItems.length}`;
       }
+
+      if (!state.isAnimating) {
+        preloadAdjacentSequenceImages();
+      }
     }
   );
 }
@@ -519,6 +527,30 @@ function preloadAdjacentLightboxImages() {
   [previousIndex, nextIndex].forEach((index) => {
     const image = thumbnailButtons[index].querySelector("img");
     preloadImage(getLightboxSource(image));
+  });
+}
+
+function preloadSequenceImages() {
+  if (selectedWorksItems.length === 0) {
+    return;
+  }
+
+  // Prioritize the first few carousel images so desktop clicks feel immediate
+  // even before the user has interacted with the sequence.
+  selectedWorksItems.slice(0, 6).forEach((image) => preloadImage(image.main, "high"));
+  preloadAdjacentSequenceImages();
+}
+
+function preloadAdjacentSequenceImages() {
+  if (selectedWorksItems.length === 0) {
+    return;
+  }
+
+  const previousIndex = (currentSequenceIndex - 1 + selectedWorksItems.length) % selectedWorksItems.length;
+  const nextIndex = (currentSequenceIndex + 1) % selectedWorksItems.length;
+
+  [previousIndex, nextIndex].forEach((index) => {
+    preloadImage(selectedWorksItems[index].main, "high");
   });
 }
 
