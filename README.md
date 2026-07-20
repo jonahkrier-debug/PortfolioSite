@@ -1,6 +1,7 @@
 # Jonah Krier Portfolio
 
-Static photography portfolio built with plain HTML, CSS, and JavaScript.
+Static photography portfolio built with plain HTML, CSS, and JavaScript, with an
+optional tag-driven darktable export pipeline.
 
 The site is intentionally lightweight: there is no framework, package manager, or build step.
 
@@ -12,12 +13,36 @@ The site is intentionally lightweight: there is no framework, package manager, o
 
 ## Important files
 
-- `data/projects.js` - main content/config file for homepage images and project images
+- `data/projects.js` - generated content data for homepage and project images
 - `script.js` - renders carousels, thumbnails, lightbox, counters, and project dropdowns
 - `styles.css` - all layout and visual styling
 - `Images/` - all image assets
+- `automation/` - darktable sync, safety configuration, tests, and task installer
 
-Most future image/project edits should start in `data/projects.js`.
+Once the automation is initialized, image/project edits start by tagging or
+untagging in darktable. See [`automation/README.md`](automation/README.md). The
+manual instructions below remain useful as a fallback before activation.
+
+## Automated darktable workflow
+
+The supported tags are:
+
+- `portfolio|home`
+- `portfolio|info` (exactly one image)
+- `portfolio|project|selected-works`
+- `portfolio|project|<future-project-slug>`
+
+Validate the selections without changing the site:
+
+```powershell
+.\automation\Sync-Portfolio.cmd -DryRun
+```
+
+The pipeline refuses to change the site if the tag namespace is uninitialized,
+the Info selection is not exactly one image, a required collection is empty, the
+archive identity/source files are unavailable, or the catalog changes during an
+export. Generated AVIF filenames are content-hashed, and stale cleanup is limited
+to files owned by the last successful manifest after a cache-safe grace period.
 
 ## Local preview
 

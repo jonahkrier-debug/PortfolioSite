@@ -4,15 +4,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Selected Works — Jonah Krier</title>
+    <title>{title} — Jonah Krier</title>
     <meta
       name="description"
-      content="Selected photography works by Jonah Krier."
+      content="{description}"
     />
-    <meta property="og:title" content="Selected Works — Jonah Krier" />
-    <meta property="og:description" content="Selected photography works by Jonah Krier." />
+    <meta property="og:title" content="{title} — Jonah Krier" />
+    <meta property="og:description" content="{description}" />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="Images/Generated/Projects/selected-works/Carousel/DSC00030-dt49445v0-1ca492c62224.avif" />
+    <meta property="og:image" content="{first_image}" />
     <link rel="icon" href="favicon-48.png" sizes="48x48" type="image/png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -26,7 +26,7 @@
     `data-project` connects this page to the matching project in data/projects.js.
     If this page is copied for a new project, change this value to the new project's slug.
   -->
-  <body class="selected-works-page" data-project="selected-works">
+  <body class="selected-works-page" data-project="{slug}">
     <div class="page-shell">
       <div class="mobile-header">
         <a class="brand" href="index.html">JONAH KRIER</a>
@@ -39,7 +39,7 @@
 
       <aside class="sidebar" id="sidebar">
         <nav class="view-controls" aria-label="Gallery views">
-          <button class="view-button is-active" type="button" data-view="sequence">Selected Works</button>
+          <button class="view-button is-active" type="button" data-view="sequence">{title}</button>
           <!-- <button class="view-button" type="button" data-view="about">About</button> -->
           <button class="view-button" type="button" data-view="thumbnails">Thumbnails</button>
         </nav>
@@ -48,9 +48,9 @@
       <header class="project-header">
         <nav class="site-nav" id="primary-nav" aria-label="Primary">
           <div class="nav-dropdown">
-            <a class="is-active" href="selected-works.html">Projects</a>
+            <a class="is-active" href="{page}">Projects</a>
             <div class="dropdown-menu" aria-label="Projects submenu">
-              <a class="is-active" href="selected-works.html">Selected Works</a>
+              <a class="is-active" href="{page}">{title}</a>
             </div>
           </div>
           <a href="info.html">About / Contact</a>
@@ -62,10 +62,10 @@
         <figure class="carousel">
           <button class="carousel-advance" type="button" aria-label="Show next photograph">
             <span class="carousel-frame">
-              <img class="carousel-image is-active" src="Images/Generated/Projects/selected-works/Carousel/DSC00030-dt49445v0-1ca492c62224.avif" alt="Photograph 1" />
+              <img class="carousel-image is-active" src="{first_image}" alt="{first_alt}" />
             </span>
           </button>
-          <figcaption class="carousel-count">1/21</figcaption>
+          <figcaption class="carousel-count">1/{count}</figcaption>
         </figure>
       </section>
 
@@ -80,7 +80,7 @@
       <button class="lightbox-close" type="button" aria-label="Close image">×</button>
       <span class="lightbox-frame">
         <img class="lightbox-image is-active" alt="" draggable="false" />
-        <span class="lightbox-count">1/21</span>
+        <span class="lightbox-count">1/{count}</span>
       </span>
       <button class="lightbox-nav lightbox-next" type="button" aria-label="Show next image">›</button>
     </dialog>

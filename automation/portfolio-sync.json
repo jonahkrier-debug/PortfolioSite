@@ -1,0 +1,103 @@
+{
+  "schema_version": 1,
+  "site_root": "..",
+  "state_dir": "../.portfolio-sync",
+  "darktable": {
+    "cli": "C:/Program Files/darktable/bin/darktable-cli.exe",
+    "library_db": "%LOCALAPPDATA%/darktable/library.db",
+    "data_db": "%LOCALAPPDATA%/darktable/data.db",
+    "read_retries": 5,
+    "read_retry_seconds": 0.5,
+    "export_timeout_seconds": 300
+  },
+  "archive_guard": {
+    "root": "F:/7_Photo",
+    "volume_label": "DAS",
+    "volume_guid": "\\\\?\\Volume{f686e825-e4e5-44e7-bf00-33cb35ae226d}\\",
+    "required_paths": [
+      "Captures",
+      "Exports"
+    ],
+    "require_selected_sources": true
+  },
+  "tags": {
+    "namespace": "portfolio",
+    "home": "portfolio|home",
+    "info": "portfolio|info",
+    "project_prefix": "portfolio|project|"
+  },
+  "minimum_home_images": 1,
+  "required_projects": [
+    "selected-works"
+  ],
+  "projects": {
+    "selected-works": {
+      "title": "Selected Works",
+      "page": "selected-works.html",
+      "description": "Selected photography works by Jonah Krier."
+    }
+  },
+  "variants": {
+    "home": {
+      "width": 2400,
+      "height": 2400,
+      "quality": 50,
+      "bpp": 10,
+      "compression_type": 1,
+      "tiling": true,
+      "hq": true
+    },
+    "info": {
+      "width": 1400,
+      "height": 1400,
+      "quality": 50,
+      "bpp": 10,
+      "compression_type": 1,
+      "tiling": true,
+      "hq": true
+    },
+    "project_main": {
+      "width": 2000,
+      "height": 2000,
+      "quality": 50,
+      "bpp": 10,
+      "compression_type": 1,
+      "tiling": true,
+      "hq": true
+    },
+    "project_grid": {
+      "width": 1600,
+      "height": 1600,
+      "quality": 45,
+      "bpp": 10,
+      "compression_type": 1,
+      "tiling": true,
+      "hq": true
+    },
+    "project_lightbox": {
+      "width": 2400,
+      "height": 2400,
+      "quality": 55,
+      "bpp": 10,
+      "compression_type": 1,
+      "tiling": true,
+      "hq": true
+    }
+  },
+  "output": {
+    "image_root": "Images/Generated",
+    "data_file": "data/projects.js",
+    "manifest_file": "data/portfolio-manifest.json",
+    "project_template": "templates/project.html.template",
+    "bootstrap_legacy_cleanup": true,
+    "stale_retention_days": 14,
+    "legacy_project_pages": [
+      "selected-works.html"
+    ],
+    "legacy_image_roots": [
+      "Images/Home",
+      "Images/Info",
+      "Images/SelectedWorks"
+    ]
+  }
+}
