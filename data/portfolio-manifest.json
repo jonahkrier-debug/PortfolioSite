@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-07-20T20:22:04+00:00",
+  "generated_at": "2026-07-20T21:54:59+00:00",
   "catalog_digest": "192cf04565f1e8f2068e9938636cb3b33f765c73566ae255b737cf6fed3ac538",
   "tags": {
     "home": "portfolio|home",
@@ -833,9 +833,9 @@
   ],
   "text_sha256": {
     "data/projects.js": "f9ddbf1bb3d894ca88dee1878b189f56885888e8b3248609cfe7c92220f84e52",
-    "index.html": "c2433717df4ebd3f567d5bd939e93550c87163dd84a883600723cdc14115b1ea",
-    "info.html": "37619e0623a6379af84f540caf55c2f8b6667ccb22706c0eb9fcf3b4241e3622",
-    "selected-works.html": "578cf9da89b45a1e23d510b5ce3ab2745d898e096dbb3a4ba33d6f778db1eb97"
+    "index.html": "640d82e5602619addfa1c085e3e384a4794806250dedfcea490fa6088b91a004",
+    "info.html": "846441aca97ad5fc3c2d133c947127ba2554469f7689fc2d46600d17d229a781",
+    "selected-works.html": "6307258e83474eef3ecd219843f0cfd0a6e30a0cee01f4d704e653246e98d64a"
   },
   "retained_files": [
     {
