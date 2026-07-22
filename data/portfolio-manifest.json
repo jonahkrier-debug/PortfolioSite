@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-07-22T03:06:30+00:00",
-  "catalog_digest": "1a577347fa50adcc4b837c0a71a79aab9c6e23414740d3c7ab562599809b9304",
+  "generated_at": "2026-07-22T03:15:54+00:00",
+  "catalog_digest": "8fe6f2e7b243b3e3455fbc6b329e735a3b8a1bf7aa61e0c973bb838a70f5b343",
   "tags": {
     "home": "portfolio|home",
     "info": "portfolio|info",
@@ -222,9 +222,9 @@
     },
     {
       "key": "project:selected-works:grid:43636:v0",
-      "path": "Images/Generated/Projects/selected-works/Grid/R0000778-dt43636v0-d9d438a092d1.avif",
-      "sha256": "d9d438a092d14a68fc3516d8d22ba5310ed48a49d7d0d1c5c3e8311d36f4a808",
-      "source_signature": "129e90963ae51e87513ffbe601b6ac626edc257e1712a6fe8e9c12509113a856",
+      "path": "Images/Generated/Projects/selected-works/Grid/R0000778-dt43636v0-2a4990b3caf5.avif",
+      "sha256": "2a4990b3caf51084e3519f8b6bd0294d6a3df591c1df5583405f753d20de72e9",
+      "source_signature": "196b6912d101db15eff0e8431ec12cb9d15ff81b69386737555d6bdb8a76767a",
       "variant_signature": "b6bbe1ff9691a1736bb32a1b4f9e07ab0c911880288b860b537213da4e7a3dbd",
       "image_id": 43636,
       "version": 0,
@@ -432,9 +432,9 @@
     },
     {
       "key": "project:selected-works:lightbox:43636:v0",
-      "path": "Images/Generated/Projects/selected-works/Lightbox/R0000778-dt43636v0-2e7d29388ebd.avif",
-      "sha256": "2e7d29388ebdf744994e4d6ef68a6bd9918b12bac25f2e0818a185f73da4c9cb",
-      "source_signature": "129e90963ae51e87513ffbe601b6ac626edc257e1712a6fe8e9c12509113a856",
+      "path": "Images/Generated/Projects/selected-works/Lightbox/R0000778-dt43636v0-d0ce7e373c68.avif",
+      "sha256": "d0ce7e373c686d80a488efcff8ff95f2e2a1ede8e6fe8545cb30d8370089abea",
+      "source_signature": "196b6912d101db15eff0e8431ec12cb9d15ff81b69386737555d6bdb8a76767a",
       "variant_signature": "369a34e21af3b699e67823f7b6f9485b0bb0853b6a59ae0a6965092971d1242f",
       "image_id": 43636,
       "version": 0,
@@ -642,9 +642,9 @@
     },
     {
       "key": "project:selected-works:main:43636:v0",
-      "path": "Images/Generated/Projects/selected-works/Carousel/R0000778-dt43636v0-8bc967af80b5.avif",
-      "sha256": "8bc967af80b5acff63df2c7f724aaba83e7faaddb4d6e62e7dbb1a1f6a819acb",
-      "source_signature": "129e90963ae51e87513ffbe601b6ac626edc257e1712a6fe8e9c12509113a856",
+      "path": "Images/Generated/Projects/selected-works/Carousel/R0000778-dt43636v0-96826c969645.avif",
+      "sha256": "96826c969645789368760515c6a77ffcc6b5577918cface116a9b222d24b0099",
+      "source_signature": "196b6912d101db15eff0e8431ec12cb9d15ff81b69386737555d6bdb8a76767a",
       "variant_signature": "692e4a3bad145a3ce287aed83829ba5039ee2ff2ed4f9aded36a4a53fe009f43",
       "image_id": 43636,
       "version": 0,
@@ -785,7 +785,7 @@
     "Images/Generated/Projects/selected-works/Carousel/DSC09843-dt55757v0-0dedab43f64b.avif",
     "Images/Generated/Projects/selected-works/Carousel/DSC09890-dt49725v0-839a5ba0e5ff.avif",
     "Images/Generated/Projects/selected-works/Carousel/JonahKrierPortfolio-3-dt51067v0-bfc282b1c0bb.avif",
-    "Images/Generated/Projects/selected-works/Carousel/R0000778-dt43636v0-8bc967af80b5.avif",
+    "Images/Generated/Projects/selected-works/Carousel/R0000778-dt43636v0-96826c969645.avif",
     "Images/Generated/Projects/selected-works/Carousel/R0002718-dt56158v0-0e3d412e22eb.avif",
     "Images/Generated/Projects/selected-works/Grid/DSC00030-dt49445v0-1c1eb112a18c.avif",
     "Images/Generated/Projects/selected-works/Grid/DSC01306-dt36865v0-4d7060851e74.avif",
@@ -806,7 +806,7 @@
     "Images/Generated/Projects/selected-works/Grid/DSC09843-dt55757v0-54b264a6b46b.avif",
     "Images/Generated/Projects/selected-works/Grid/DSC09890-dt49725v0-894aba306f75.avif",
     "Images/Generated/Projects/selected-works/Grid/JonahKrierPortfolio-3-dt51067v0-3f1a477f2898.avif",
-    "Images/Generated/Projects/selected-works/Grid/R0000778-dt43636v0-d9d438a092d1.avif",
+    "Images/Generated/Projects/selected-works/Grid/R0000778-dt43636v0-2a4990b3caf5.avif",
     "Images/Generated/Projects/selected-works/Grid/R0002718-dt56158v0-acae0eda00de.avif",
     "Images/Generated/Projects/selected-works/Lightbox/DSC00030-dt49445v0-640bbd71f52c.avif",
     "Images/Generated/Projects/selected-works/Lightbox/DSC01306-dt36865v0-b97592913480.avif",
@@ -827,12 +827,12 @@
     "Images/Generated/Projects/selected-works/Lightbox/DSC09843-dt55757v0-afa27f24d68d.avif",
     "Images/Generated/Projects/selected-works/Lightbox/DSC09890-dt49725v0-6d475843db40.avif",
     "Images/Generated/Projects/selected-works/Lightbox/JonahKrierPortfolio-3-dt51067v0-eb58b6616569.avif",
-    "Images/Generated/Projects/selected-works/Lightbox/R0000778-dt43636v0-2e7d29388ebd.avif",
+    "Images/Generated/Projects/selected-works/Lightbox/R0000778-dt43636v0-d0ce7e373c68.avif",
     "Images/Generated/Projects/selected-works/Lightbox/R0002718-dt56158v0-0f6e91056bbd.avif",
     "selected-works.html"
   ],
   "text_sha256": {
-    "data/projects.js": "267262f2f5eafdec329493fe8a8c8201ef8660f26f1c742f9b6bf57d443243a3",
+    "data/projects.js": "5cf4f38e7b0fe99bab3d9ab6fe9c8e17a6abc38b71bd5a20b351a02dac57942d",
     "index.html": "640d82e5602619addfa1c085e3e384a4794806250dedfcea490fa6088b91a004",
     "info.html": "846441aca97ad5fc3c2d133c947127ba2554469f7689fc2d46600d17d229a781",
     "selected-works.html": "6307258e83474eef3ecd219843f0cfd0a6e30a0cee01f4d704e653246e98d64a"
@@ -857,6 +857,12 @@
       "kind": "asset"
     },
     {
+      "path": "Images/Generated/Projects/selected-works/Carousel/R0000778-dt43636v0-8bc967af80b5.avif",
+      "sha256": "8bc967af80b5acff63df2c7f724aaba83e7faaddb4d6e62e7dbb1a1f6a819acb",
+      "delete_after": "2026-08-05T03:15:54+00:00",
+      "kind": "asset"
+    },
+    {
       "path": "Images/Generated/Projects/selected-works/Carousel/R0000778-dt43636v0-a7f805c81cf8.avif",
       "sha256": "a7f805c81cf8fb8992251019f97ceb1ed7cd98c471853b47023416927bfc3f66",
       "delete_after": "2026-08-05T03:06:30+00:00",
@@ -875,9 +881,21 @@
       "kind": "asset"
     },
     {
+      "path": "Images/Generated/Projects/selected-works/Grid/R0000778-dt43636v0-d9d438a092d1.avif",
+      "sha256": "d9d438a092d14a68fc3516d8d22ba5310ed48a49d7d0d1c5c3e8311d36f4a808",
+      "delete_after": "2026-08-05T03:15:54+00:00",
+      "kind": "asset"
+    },
+    {
       "path": "Images/Generated/Projects/selected-works/Grid/R0000778-dt43636v0-dfa63426284c.avif",
       "sha256": "dfa63426284c6ddd2538399b42d7ba1554d4634345c7a656166135de35d63fc6",
       "delete_after": "2026-08-05T02:47:43+00:00",
+      "kind": "asset"
+    },
+    {
+      "path": "Images/Generated/Projects/selected-works/Lightbox/R0000778-dt43636v0-2e7d29388ebd.avif",
+      "sha256": "2e7d29388ebdf744994e4d6ef68a6bd9918b12bac25f2e0818a185f73da4c9cb",
+      "delete_after": "2026-08-05T03:15:54+00:00",
       "kind": "asset"
     },
     {
