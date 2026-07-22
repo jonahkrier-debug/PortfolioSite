@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-07-20T22:21:13+00:00",
-  "catalog_digest": "2eb8a7733595d63a8aa69d068c820bd8194be05cb051b02803cf34bfce746b2e",
+  "generated_at": "2026-07-22T02:47:43+00:00",
+  "catalog_digest": "c454617e9afb4818de280d3932e202d640d9c78902a164aa7f59545d22e1478b",
   "tags": {
     "home": "portfolio|home",
     "info": "portfolio|info",
@@ -222,9 +222,9 @@
     },
     {
       "key": "project:selected-works:grid:43636:v0",
-      "path": "Images/Generated/Projects/selected-works/Grid/R0000778-dt43636v0-dfa63426284c.avif",
-      "sha256": "dfa63426284c6ddd2538399b42d7ba1554d4634345c7a656166135de35d63fc6",
-      "source_signature": "d4b1ed3a018a0d5d73c4744b95e3502466f4950b1f84d5715f450f7bebd2d922",
+      "path": "Images/Generated/Projects/selected-works/Grid/R0000778-dt43636v0-546dd6c95c83.avif",
+      "sha256": "546dd6c95c832b4b9ac4299c5289c279871d77329e8f6c5877e6db9a364d0519",
+      "source_signature": "2de5abebed0e5cfb810995733de187fb0ee15aa6502d051dc255d8d0b5d2058e",
       "variant_signature": "b6bbe1ff9691a1736bb32a1b4f9e07ab0c911880288b860b537213da4e7a3dbd",
       "image_id": 43636,
       "version": 0,
@@ -432,9 +432,9 @@
     },
     {
       "key": "project:selected-works:lightbox:43636:v0",
-      "path": "Images/Generated/Projects/selected-works/Lightbox/R0000778-dt43636v0-d318c07bb464.avif",
-      "sha256": "d318c07bb464de427a77951147d8f9f248d3d9b4a818b8cfdc6edc0196d9e897",
-      "source_signature": "d4b1ed3a018a0d5d73c4744b95e3502466f4950b1f84d5715f450f7bebd2d922",
+      "path": "Images/Generated/Projects/selected-works/Lightbox/R0000778-dt43636v0-54efb3c1efec.avif",
+      "sha256": "54efb3c1efecadf3796f05806dee52e2abc18697e63a20fcae25a01dd82e6d9a",
+      "source_signature": "2de5abebed0e5cfb810995733de187fb0ee15aa6502d051dc255d8d0b5d2058e",
       "variant_signature": "369a34e21af3b699e67823f7b6f9485b0bb0853b6a59ae0a6965092971d1242f",
       "image_id": 43636,
       "version": 0,
@@ -642,9 +642,9 @@
     },
     {
       "key": "project:selected-works:main:43636:v0",
-      "path": "Images/Generated/Projects/selected-works/Carousel/R0000778-dt43636v0-22a1c37ca27a.avif",
-      "sha256": "22a1c37ca27a4fc0a86a8bd62b20411059a7e3472b85eea664c0055a930f43dd",
-      "source_signature": "d4b1ed3a018a0d5d73c4744b95e3502466f4950b1f84d5715f450f7bebd2d922",
+      "path": "Images/Generated/Projects/selected-works/Carousel/R0000778-dt43636v0-04fea71a0547.avif",
+      "sha256": "04fea71a05474a3d6fb065d8bafdb6b1dc1719847378752fbf88d08e7a781a73",
+      "source_signature": "2de5abebed0e5cfb810995733de187fb0ee15aa6502d051dc255d8d0b5d2058e",
       "variant_signature": "692e4a3bad145a3ce287aed83829ba5039ee2ff2ed4f9aded36a4a53fe009f43",
       "image_id": 43636,
       "version": 0,
@@ -785,7 +785,7 @@
     "Images/Generated/Projects/selected-works/Carousel/DSC09843-dt55757v0-0dedab43f64b.avif",
     "Images/Generated/Projects/selected-works/Carousel/DSC09890-dt49725v0-839a5ba0e5ff.avif",
     "Images/Generated/Projects/selected-works/Carousel/JonahKrierPortfolio-3-dt51067v0-bfc282b1c0bb.avif",
-    "Images/Generated/Projects/selected-works/Carousel/R0000778-dt43636v0-22a1c37ca27a.avif",
+    "Images/Generated/Projects/selected-works/Carousel/R0000778-dt43636v0-04fea71a0547.avif",
     "Images/Generated/Projects/selected-works/Carousel/R0002718-dt56158v0-0e3d412e22eb.avif",
     "Images/Generated/Projects/selected-works/Grid/DSC00030-dt49445v0-1c1eb112a18c.avif",
     "Images/Generated/Projects/selected-works/Grid/DSC01306-dt36865v0-4d7060851e74.avif",
@@ -806,7 +806,7 @@
     "Images/Generated/Projects/selected-works/Grid/DSC09843-dt55757v0-54b264a6b46b.avif",
     "Images/Generated/Projects/selected-works/Grid/DSC09890-dt49725v0-894aba306f75.avif",
     "Images/Generated/Projects/selected-works/Grid/JonahKrierPortfolio-3-dt51067v0-3f1a477f2898.avif",
-    "Images/Generated/Projects/selected-works/Grid/R0000778-dt43636v0-dfa63426284c.avif",
+    "Images/Generated/Projects/selected-works/Grid/R0000778-dt43636v0-546dd6c95c83.avif",
     "Images/Generated/Projects/selected-works/Grid/R0002718-dt56158v0-acae0eda00de.avif",
     "Images/Generated/Projects/selected-works/Lightbox/DSC00030-dt49445v0-640bbd71f52c.avif",
     "Images/Generated/Projects/selected-works/Lightbox/DSC01306-dt36865v0-b97592913480.avif",
@@ -827,17 +827,35 @@
     "Images/Generated/Projects/selected-works/Lightbox/DSC09843-dt55757v0-afa27f24d68d.avif",
     "Images/Generated/Projects/selected-works/Lightbox/DSC09890-dt49725v0-6d475843db40.avif",
     "Images/Generated/Projects/selected-works/Lightbox/JonahKrierPortfolio-3-dt51067v0-eb58b6616569.avif",
-    "Images/Generated/Projects/selected-works/Lightbox/R0000778-dt43636v0-d318c07bb464.avif",
+    "Images/Generated/Projects/selected-works/Lightbox/R0000778-dt43636v0-54efb3c1efec.avif",
     "Images/Generated/Projects/selected-works/Lightbox/R0002718-dt56158v0-0f6e91056bbd.avif",
     "selected-works.html"
   ],
   "text_sha256": {
-    "data/projects.js": "f9ddbf1bb3d894ca88dee1878b189f56885888e8b3248609cfe7c92220f84e52",
+    "data/projects.js": "5ddf10d04572745b59cb782e0b171f8710b5d0060c149656d708dd231e978ffb",
     "index.html": "640d82e5602619addfa1c085e3e384a4794806250dedfcea490fa6088b91a004",
     "info.html": "846441aca97ad5fc3c2d133c947127ba2554469f7689fc2d46600d17d229a781",
     "selected-works.html": "6307258e83474eef3ecd219843f0cfd0a6e30a0cee01f4d704e653246e98d64a"
   },
   "retained_files": [
+    {
+      "path": "Images/Generated/Projects/selected-works/Carousel/R0000778-dt43636v0-22a1c37ca27a.avif",
+      "sha256": "22a1c37ca27a4fc0a86a8bd62b20411059a7e3472b85eea664c0055a930f43dd",
+      "delete_after": "2026-08-05T02:47:43+00:00",
+      "kind": "asset"
+    },
+    {
+      "path": "Images/Generated/Projects/selected-works/Grid/R0000778-dt43636v0-dfa63426284c.avif",
+      "sha256": "dfa63426284c6ddd2538399b42d7ba1554d4634345c7a656166135de35d63fc6",
+      "delete_after": "2026-08-05T02:47:43+00:00",
+      "kind": "asset"
+    },
+    {
+      "path": "Images/Generated/Projects/selected-works/Lightbox/R0000778-dt43636v0-d318c07bb464.avif",
+      "sha256": "d318c07bb464de427a77951147d8f9f248d3d9b4a818b8cfdc6edc0196d9e897",
+      "delete_after": "2026-08-05T02:47:43+00:00",
+      "kind": "asset"
+    },
     {
       "path": "Images/Home/Index_01_DSC02069.avif",
       "sha256": "5b0655d671ca46de69a633c5153f1a4e4ce1a864b332f0ae2d0064e8831ee498",
