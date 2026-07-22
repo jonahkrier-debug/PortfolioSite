@@ -136,9 +136,9 @@ window.PORTFOLIO_DATA = {
           "alt": "Photograph 13"
         },
         {
-          "main": "Images/Generated/Projects/selected-works/Carousel/R0000778-dt43636v0-04fea71a0547.avif",
-          "grid": "Images/Generated/Projects/selected-works/Grid/R0000778-dt43636v0-546dd6c95c83.avif",
-          "lightbox": "Images/Generated/Projects/selected-works/Lightbox/R0000778-dt43636v0-54efb3c1efec.avif",
+          "main": "Images/Generated/Projects/selected-works/Carousel/R0000778-dt43636v0-81f9834b6d31.avif",
+          "grid": "Images/Generated/Projects/selected-works/Grid/R0000778-dt43636v0-2b763202c600.avif",
+          "lightbox": "Images/Generated/Projects/selected-works/Lightbox/R0000778-dt43636v0-f5fa3281fac9.avif",
           "alt": "Photograph 14"
         },
         {
