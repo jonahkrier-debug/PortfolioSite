@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-08-04T16:06:54+00:00",
+  "generated_at": "2026-08-05T15:32:51+00:00",
   "catalog_digest": "438a2a75746c70a5777da263584af1839a132945f650431b155083ba6b945362",
   "tags": {
     "home": "portfolio|home",
@@ -839,63 +839,9 @@
   },
   "retained_files": [
     {
-      "path": "Images/Generated/Projects/selected-works/Carousel/R0000778-dt43636v0-04fea71a0547.avif",
-      "sha256": "04fea71a05474a3d6fb065d8bafdb6b1dc1719847378752fbf88d08e7a781a73",
-      "delete_after": "2026-08-05T02:50:05+00:00",
-      "kind": "asset"
-    },
-    {
-      "path": "Images/Generated/Projects/selected-works/Carousel/R0000778-dt43636v0-22a1c37ca27a.avif",
-      "sha256": "22a1c37ca27a4fc0a86a8bd62b20411059a7e3472b85eea664c0055a930f43dd",
-      "delete_after": "2026-08-05T02:47:43+00:00",
-      "kind": "asset"
-    },
-    {
-      "path": "Images/Generated/Projects/selected-works/Carousel/R0000778-dt43636v0-81f9834b6d31.avif",
-      "sha256": "81f9834b6d3101cf6c9dc4eb05c760e59f01d2faa4c0f6f36639e7660578556a",
-      "delete_after": "2026-08-05T03:01:38+00:00",
-      "kind": "asset"
-    },
-    {
-      "path": "Images/Generated/Projects/selected-works/Carousel/R0000778-dt43636v0-8bc967af80b5.avif",
-      "sha256": "8bc967af80b5acff63df2c7f724aaba83e7faaddb4d6e62e7dbb1a1f6a819acb",
-      "delete_after": "2026-08-05T03:15:54+00:00",
-      "kind": "asset"
-    },
-    {
-      "path": "Images/Generated/Projects/selected-works/Carousel/R0000778-dt43636v0-96826c969645.avif",
-      "sha256": "96826c969645789368760515c6a77ffcc6b5577918cface116a9b222d24b0099",
-      "delete_after": "2026-08-05T04:23:29+00:00",
-      "kind": "asset"
-    },
-    {
-      "path": "Images/Generated/Projects/selected-works/Carousel/R0000778-dt43636v0-a7f805c81cf8.avif",
-      "sha256": "a7f805c81cf8fb8992251019f97ceb1ed7cd98c471853b47023416927bfc3f66",
-      "delete_after": "2026-08-05T03:06:30+00:00",
-      "kind": "asset"
-    },
-    {
       "path": "Images/Generated/Projects/selected-works/Carousel/R0000778-dt43636v0-a85d26371932.avif",
       "sha256": "a85d263719328bc48c0a6859f5f520905bff49f056a37b4efa37479df66d76ac",
       "delete_after": "2026-08-07T20:51:52+00:00",
-      "kind": "asset"
-    },
-    {
-      "path": "Images/Generated/Projects/selected-works/Grid/R0000778-dt43636v0-2a4990b3caf5.avif",
-      "sha256": "2a4990b3caf51084e3519f8b6bd0294d6a3df591c1df5583405f753d20de72e9",
-      "delete_after": "2026-08-05T04:23:29+00:00",
-      "kind": "asset"
-    },
-    {
-      "path": "Images/Generated/Projects/selected-works/Grid/R0000778-dt43636v0-2b763202c600.avif",
-      "sha256": "2b763202c600174305b1ae466c5a87bb5392541e8d4050ef0f212651adcd005f",
-      "delete_after": "2026-08-05T03:01:38+00:00",
-      "kind": "asset"
-    },
-    {
-      "path": "Images/Generated/Projects/selected-works/Grid/R0000778-dt43636v0-546dd6c95c83.avif",
-      "sha256": "546dd6c95c832b4b9ac4299c5289c279871d77329e8f6c5877e6db9a364d0519",
-      "delete_after": "2026-08-05T02:50:05+00:00",
       "kind": "asset"
     },
     {
@@ -905,51 +851,9 @@
       "kind": "asset"
     },
     {
-      "path": "Images/Generated/Projects/selected-works/Grid/R0000778-dt43636v0-d9d438a092d1.avif",
-      "sha256": "d9d438a092d14a68fc3516d8d22ba5310ed48a49d7d0d1c5c3e8311d36f4a808",
-      "delete_after": "2026-08-05T03:15:54+00:00",
-      "kind": "asset"
-    },
-    {
-      "path": "Images/Generated/Projects/selected-works/Grid/R0000778-dt43636v0-dfa63426284c.avif",
-      "sha256": "dfa63426284c6ddd2538399b42d7ba1554d4634345c7a656166135de35d63fc6",
-      "delete_after": "2026-08-05T02:47:43+00:00",
-      "kind": "asset"
-    },
-    {
-      "path": "Images/Generated/Projects/selected-works/Lightbox/R0000778-dt43636v0-2e7d29388ebd.avif",
-      "sha256": "2e7d29388ebdf744994e4d6ef68a6bd9918b12bac25f2e0818a185f73da4c9cb",
-      "delete_after": "2026-08-05T03:15:54+00:00",
-      "kind": "asset"
-    },
-    {
       "path": "Images/Generated/Projects/selected-works/Lightbox/R0000778-dt43636v0-339008b9fbc4.avif",
       "sha256": "339008b9fbc4ffebb8df55115b91f9bdd91e0baa4a7255ad2315061e42bea59c",
       "delete_after": "2026-08-07T20:51:52+00:00",
-      "kind": "asset"
-    },
-    {
-      "path": "Images/Generated/Projects/selected-works/Lightbox/R0000778-dt43636v0-54efb3c1efec.avif",
-      "sha256": "54efb3c1efecadf3796f05806dee52e2abc18697e63a20fcae25a01dd82e6d9a",
-      "delete_after": "2026-08-05T02:50:05+00:00",
-      "kind": "asset"
-    },
-    {
-      "path": "Images/Generated/Projects/selected-works/Lightbox/R0000778-dt43636v0-d0ce7e373c68.avif",
-      "sha256": "d0ce7e373c686d80a488efcff8ff95f2e2a1ede8e6fe8545cb30d8370089abea",
-      "delete_after": "2026-08-05T04:23:29+00:00",
-      "kind": "asset"
-    },
-    {
-      "path": "Images/Generated/Projects/selected-works/Lightbox/R0000778-dt43636v0-d318c07bb464.avif",
-      "sha256": "d318c07bb464de427a77951147d8f9f248d3d9b4a818b8cfdc6edc0196d9e897",
-      "delete_after": "2026-08-05T02:47:43+00:00",
-      "kind": "asset"
-    },
-    {
-      "path": "Images/Generated/Projects/selected-works/Lightbox/R0000778-dt43636v0-f5fa3281fac9.avif",
-      "sha256": "f5fa3281fac9f67615aacacdc6130f44219a927d3e99f5146facccef551e140b",
-      "delete_after": "2026-08-05T03:01:38+00:00",
       "kind": "asset"
     }
   ]
